@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .page {
+        width: 500px;
+        height: 2000px;
+        background-color: rgb(247, 138, 138);
+        margin: 50px auto;
+    }
+</style>
+<body>
+    <div class="page">hello</div>
+</body>
+<script>
+    var p = document.querySelector('.page') 
+    p.addEventListener('click', function(e){
+        // client 相对于浏览器可视区的左上
+        console.log('clientX:', e.clientX) 
+        console.log('clientY:', e.clientY) 
+        // page 相对于文档的左上（文档可能会上下、左右滚动）
+        console.log('pageX:', e.pageX) 
+        console.log('pageY:', e.pageY) 
+        // screen 相对于屏幕的左上 
+        console.log('screenX:', e.screenX) 
+        console.log('screenY:', e.screenY) 
+    })
+</script>
+</html>

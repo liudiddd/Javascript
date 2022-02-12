@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            position: absolute;
+            width: 100px;
+            height: 60px;
+            
+        }
+        .box {
+            width: 300px;
+            height: 800px;
+            cursor: url('float-icon.png'), pointer;
+            background-color: rgb(247, 134, 134);
+        }
+    </style>
+</head>
+<body>
+    <img src="20210112101612280.gif" alt="">
+    <div class="box"></div>
+</body>
+<script>
+    var img = document.querySelector('img')
+    console.dir(img)
+    document.addEventListener('mousemove', function(e){
+        img.style.position = 'absolute'
+        img.style.left = e.clientX + 'px'
+        img.style.top = e.clientY + 'px' 
+        //console.log(e.clientX, e.clientY)
+        console.log(img.style.left, img.style.top)
+    })
+</script>
+</html>

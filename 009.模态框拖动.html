@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .login {
+            position: absolute;
+            background-color: rgb(247, 222, 189);
+            left: 50%;
+            top: 50%;
+            width: 300px;
+            height: 200px;
+            transform: translate(-50%, -50%);
+        }
+        .title {
+            width: 100%;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+            background-color: rgb(189, 209, 252);
+        }
+    </style>
+</head>
+<body>
+    <div class="login">
+        <div class="title">
+            会员登录
+        </div>
+        <div class="content">
+
+        </div>
+    </div>
+</body>
+<script>
+
+    var login = document.querySelector('.login')
+    var t = document.querySelector('.title') 
+    t.addEventListener('mousedown', function(e){
+        function move(e2){
+            // 计算鼠标沿xy轴移动距离
+            var x = e2.pageX - pageX 
+            var y = e2.pageY - pageY 
+            login.style.top = offsetTop + y + 'px'
+            login.style.left = offsetLeft + x + 'px'
+    
+        }
+
+        t.style.cursor = 'move' 
+        // 鼠标起始位置 
+        var pageX = e.pageX 
+        var pageY = e.pageY
+        var offsetTop = login.offsetTop
+        var offsetLeft = login.offsetLeft  
+        console.log(pageX, pageY, offsetTop, offsetLeft)
+        t.addEventListener('mousemove', move)
+
+        t.addEventListener('mouseup', function(e){
+            t.removeEventListener('mousemove', move) 
+        })
+    })
+    
+    
+
+    
+
+</script>
+</html>

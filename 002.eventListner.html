@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .parent {
+            width: 100px;
+            height: 100px;
+            background-color: rgb(77, 248, 120);
+        }
+        .btn1 {
+            width: 50px;
+            height: 30px;
+            background-color: rgb(240, 112, 112);
+        }
+        .btn2 {
+            width: 50px;
+            height: 30px;
+            background-color: rgb(182, 112, 240);
+        }
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <div class="btn1">btn1</div>
+        <div class="btn2">btn2</div>
+        <div class="mouse">我是一段不愿分享的文字</div>
+    </div>
+    
+</body>
+<script>
+    var p = document.querySelector('.parent') 
+    var btn1 = document.querySelector('.btn1')
+    var btn2 = document.querySelector('.btn2')
+    // 触发事件发生时，回调函数被执行的顺序是：从最内层元素开始，依次向外层走 
+    p.addEventListener('click', function(e){
+        console.log('parent clicked');
+        console.log('e.target:', e.target) // e.target 返回的是触发事件的对象（元素），即 .btn1（若点击的是btn1）
+        console.log('this:', this) // this 返回的是绑定事件的对象（元素），即 .parent 
+    })
+    // 元素btn1可以对click事件添加多个回调函数，触发时依次被调用 
+    btn1.addEventListener('click', function(e){
+        console.log('btn1 clicked 1')
+    })
+    btn1.addEventListener('click', function(e){
+        console.log('btn1 clicked 2')
+    })
+    // 鼠标事件 
+    var mouse = document.querySelector('.mouse') 
+    mouse.addEventListener('contextmenu', function(e){ // 禁用在此元素上点击右键时弹出菜单 
+        e.preventDefault() 
+    })
+    mouse.addEventListener('selectstart', function(e){ // 禁止选中此元素中的文字 
+        e.preventDefault() 
+    })
+</script>
+</html>

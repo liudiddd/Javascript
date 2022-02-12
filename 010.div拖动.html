@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .div2 {
+            position: absolute;
+            background-color: rgb(175, 248, 191);
+            left: 50%;
+            top: 50%;
+            width: 100px;
+            height: 50px;
+        }
+        .div1 {
+            position: absolute;
+            background-color: rgb(247, 222, 189);
+            left: 0;
+            top: 0;
+            width: 300px;
+            height: 200px;
+            transform: translate(-50%, -50%);
+        }
+        
+        .div3 {
+            position: absolute;
+            background-color: rgb(150, 128, 248);
+            left: 70%;
+            top: 10%;
+            width: 80px;
+            height: 60px;
+        }
+        div {
+            cursor: move;
+        }
+    </style>
+</head>
+<body>
+    <div class="login">
+        <div class="div1">
+            
+        </div>
+        <div class="div2">
+
+        </div>
+        <div class="div3">
+
+        </div>
+    </div>
+</body>
+<script>
+
+    var divArr = document.querySelectorAll('div')
+    divArr.forEach(function(div){
+        div.addEventListener('mousedown', function(e){
+            function move(e2){
+                // 计算鼠标沿xy轴移动距离
+                var x = e2.pageX - pageX 
+                var y = e2.pageY - pageY 
+                div.style.top = offsetTop + y + 'px'
+                div.style.left = offsetLeft + x + 'px'
+        
+            }
+            // 鼠标起始位置 
+            var pageX = e.pageX 
+            var pageY = e.pageY
+            var offsetTop = div.offsetTop
+            var offsetLeft = div.offsetLeft  
+            div.addEventListener('mousemove', move)
+            div.addEventListener('mouseup', function(e){
+                div.removeEventListener('mousemove', move) 
+            })
+        })
+    })
+    
+    
+    
+
+    
+
+</script>
+</html>

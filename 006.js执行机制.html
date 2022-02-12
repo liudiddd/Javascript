@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .btn {
+            width: 100px;
+            height: 50px;
+            background-color: rgb(243, 131, 131);
+        }
+    </style>
+</head>
+<body>
+    <div class="btn">click</div>
+</body>
+<script>
+    /*
+        js单线程，主代码放入执行栈中执行，异步代码满足条件后会压入执行栈中依次执行 
+        执行栈执行完全部代码后，再循环检查有没有任务，这种执行机制称为"事件循环"
+    */
+    var btn = document.querySelector('.btn')
+    btn.addEventListener('click', function(){
+       console.log('button click') 
+    })
+
+</script>
+</html>

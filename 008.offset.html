@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .parent {
+            position: relative;
+            left: 200px;
+            top: 100px;
+            width: 300px;
+            height: 500px;
+            background-color: rgb(233, 126, 126);
+        }
+        .child {
+            position: absolute;
+            left: 50px;
+            top: 100px;
+            width: 80px;
+            height: 200px;
+            background-color: rgb(125, 199, 241);
+        }
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <div class="middle">
+            <div class="child">
+
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    var p = document.querySelector('.parent')
+    var c = document.querySelector('.child')
+    console.log(c.offsetParent) // .parent元素。返回祖先元素中第一个带有定位的元素 
+    console.log(c.offsetTop) // 相对于offsetParent顶部的高度 
+    console.log(c.offsetLeft) // 相对于offsetParent顶部的宽度 
+    console.log(c.offsetWidth) // 返回自身包含padding、边框、内容区的宽度，返回值不带单位 
+    console.log(c.offsetHeight) // 返回自身包含padding、边框、内容区的高度，返回值不带单位 
+</script>
+</html>
